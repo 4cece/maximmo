@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Immo </title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+</head>
+
+<body>
+    <header id="mainNav" class="">
+        <nav class="navbar navbar-expand-lg navbar-light py-0 my-0">
+            <div class="container content">
+                <a class="navbar-brand fw-bold brandLogo" href="#">
+                    <span class="mr-md-2"><img src="assets/img/logo/Exclude.svg" width="15px"></span> MaxImmo
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Catalogue</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contactez-moi</a>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="" class="btn btn-outline-warning btn-cta" data-bs-toggle="modal"
+                            data-bs-target="#callClient">Se faire rappeler</a>
+                        <div class="modal fade" id="callClient" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Nous vous rappelons</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="w300">Laissez-nous simplement votre numéro ci-dessous.</p>
+                                        <form action="" id="formCallClient">
+                                            <div class="form-group">
+                                                <label for="phoneInput">Votre numéro de téléphone</label>
+                                                <input type="text" class="form-control text-center"
+                                                    placeholder="01.02.03.04.05" id="phoneInput">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-warning text-light"
+                                            id="btnSendCall">Envoyer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="headerSection" class="mb-5">
+            <div class="container">
+                <div class="row" id="formHeader">
+                    <div class="col">
+                        <form action="" class="d-flex flex-wrap flex-md-nowrap justify-content-md-between">
+                            <div class="form-group input-content">
+                                <span class="input-icon" onclick="focusInput('keyword')"><img
+                                        src="assets/img/icons/search.svg" width="20"></span>
+                                <input name="keyword" id="keyword" type="text" class="form-control grey"
+                                    placeholder="Rechercher par mots clés">
+                            </div>
+                            <div class="form-group input-content">
+                                <span class="input-icon"><img src="assets/img/icons/home.svg" width="20"></span>
+                                <span class="input-icon-suffix"><img src="assets/img/icons/caret.svg" width="20"></span>
+                                <select name="typeDeBien" id="selectType" class="form-control grey">
+                                    <option selected value="">Type de bien</option>
+                                    <option value="1">Maison</option>
+                                    <option value="2">Appartement</option>
+                                    <option value="3">Terrain</option>
+                                </select>
+                            </div>
+                            <div class="form-group input-content">
+                                <span class="input-icon" onclick="focusInput('localisation')"><img
+                                        src="assets/img/icons/location.svg" width="20"></span>
+                                <input id="localisation" type="text" class="form-control grey localisation-items"
+                                    placeholder="Localisation recherchée">
+                                    <input type="hidden" name="localisation" id="localisationHidden" value="">
+                                    <div id="resultsLocalisation">
+                                    </div>
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Trouver un bien" class="btn btn-warning" >
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row" id="listLogements">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-3">
+                    <a class="navbar-brand fw-bold brandLogo" href="#">
+                        <span class="mr-md-2"><img src="assets/img/logo/Exclude.svg" width="20"></span> <span
+                            class="s27">MaxImmo</span>
+                    </a>
+                    <p class="py-3 s16 text-greyColor">Votre partenaire immobilier</p>
+                </div>
+                <div class="col-md-9">
+                    <div class="footerBlocks d-md-flex justify-content-md-end">
+                        <div class="text-start">
+                            <span class="fw-bold s24">Services</span>
+                            <ul>
+                                <li><a href="#">Acheter</a></li>
+                                <li><a href="#">Louer</a></li>
+                                <li><a href="#">Vendre</a></li>
+                                <li><a href="#">Estimer son bien</a></li>
+                            </ul>
+                        </div>
+                        <div class="text-start">
+                            <span class="fw-bold s24">A propos</span>
+                            <ul>
+                                <li><a href="#">Qui sommes-nous ?</a></li>
+                                <li><a href="#">Nos services</a></li>
+                                <li><a href="#">Cookies</a></li>
+                                <li><a href="#">CGU</a></li>
+                                <li><a href="#">Contactez-nous</a></li>
+                            </ul>
+                        </div>
+                        <div class="text-start">
+                            <span class="fw-bold s24">L'agence</span>
+                            <ul>
+                                <li>12 place de la Gironde<br><span class="fw-bold">33000 - BORDEAUX</span><br><span
+                                        class="fw-bold">FRANCE</span></li>
+                                <ul class="d-flex socialIcons">
+                                    <a href="#"><img src="assets/img/socials/Button/facebook-white.svg" id="facebook"
+                                            alt="Facebook icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                    <a href="#"><img src="assets/img/socials/Button/insta-white.svg" id="instagram"
+                                            alt="Instagram Icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                    <a href="#"><img src="assets/img/socials/Button/twitter-white.svg" id="twitter"
+                                            alt="Twitter Icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                    <a href="#"><img src="assets/img/socials/Button/youtube-white.svg" id="youtube"
+                                            alt="Youtube Icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="bottomFooter">
+            <div class="row d-flex align-items-center">
+                <p class="text-center pt-3 s14">Copyright ©MaxImmo 2021. Toute reproduction partielle ou totale de ce
+                    site sera considérée comme illicite.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/bootstrap.bundle.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/reveal.js"></script>
+
+    <script>
+        let selectBien = document.getElementById("selectType");
+
+        selectBien.addEventListener("change", function(){
+            alert(selectBien.value);
+        })
+
+
+
+
+        const listLogements = document.getElementById("listLogements");
+        const logements = [];
+        fetch("php/getLogements.php")
+        .then(resp => resp.json())
+        .then(data => {
+            console.log(data);
+            for(logement of data){
+                let card = document.createElement("div");
+                card.classList.add("col-md-4");
+                let cardContent = document.createElement("div");
+                cardContent.classList.add("card", "p-2", "bg-light", "text-dark", "mb-5", "type"+logement.logement_type);
+
+                let titre = document.createElement("div");
+                titre.classList.add("d-flex");
+
+                let adress = document.createElement("p");
+                adress.innerHTML = logement.commune;
+
+                let prix = document.createElement("p");
+                prix.innerHTML = logement.prix+"€";
+
+                let imageLog = logement.logement_images.split(",");
+                console.log(imageLog);
+                card.innerHTML = "<img class='img-fluid' style = 'border: solid 3px grey; border-radius:8px' src='assets/img/logement/"+ imageLog[0] +"'>";
+
+                let typeBien = document.createElement("p");
+                typeBien.innerHTML = logement.typeBien;
+
+                let nbpiece = document.createElement("p");
+                nbpiece.innerHTML = logement.pieces+" pièces";
+
+                let surface = document.createElement("p");
+                surface.innerHTML = logement.surface_logement+" m2";
+
+                cardContent.appendChild(adress);
+                cardContent.appendChild(prix);
+                cardContent.appendChild(typeBien);
+                cardContent.appendChild(nbpiece);
+                cardContent.appendChild(surface);
+
+
+                card.appendChild(cardContent);
+                listLogements.appendChild(card);
+            }
+        })
+
+        
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Khula:wght@300;400;600;700;800&display=swap');
+
+$font-family-sans-serif: 'Nunito Sans', sans-serif;
+$font-logo: 'Lato', sans-serif;
+$font-secondary: "Khula", sans-serif;
+
+$templateH1family: $font-secondary;
+$templateH1size: 56px;
+$templateH1weight: bold;
+
+.brandLogo {
+    font-family: $font-logo;
+    color: $navyBlue !important;
+
+    img {
+        margin-bottom: 0.3em;
+    }
+}
+
+#mainNav {
+    ul{
+        li {
+            a {
+                font-family: $font-family-sans-serif;
+            }
+        }
+    }
+}
+
+$templateH2family: $font-secondary;
+$templateH2color: #3e3e3e;
+$templateH2weight: bolder;
+$templateH2size: 36px;
+
+.templateH2 {
+    color: $templateH2color;
+    font-weight: $templateH2weight;
+    font-size: $templateH2size;
+    font-family: $templateH2family;
+}
+
+@for $i from 10 through 36 {
+    .s#{$i} {
+        font-size: $i+px;
+    }
+}
+
+@for $i from 1 through 9 {
+    $weight: $i * 100;
+    .w#{$weight} {
+        font-weight: $weight;
+    }
+}

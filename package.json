@@ -1,0 +1,31 @@
+{
+  "name": "maximmo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "live": "live-server",
+    "gulp": "gulp",
+    "dev": "concurrently --kill-others \"npm run gulp\" \"npm run live\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
+    "scrollreveal": "^4.0.9"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "eslint": "^7.27.0",
+    "gulp-livereload": "^4.0.2",
+    "gulp-sass": "^4.1.0",
+    "gulp-watch": "^5.0.1",
+    "node-sass": "^6.0.0"
+  }
+}

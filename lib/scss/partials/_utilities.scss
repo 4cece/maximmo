@@ -1,0 +1,6 @@
+@for $i from 0 to 100 {
+    .op#{$i} {
+        opacity: $i / 100;
+    }
+    $i : $i + 10;
+}

@@ -1,0 +1,17 @@
+a, input {
+    &.btn-warning {
+        color: $bgWhite;
+        font-weight: bold;
+
+        &:hover {
+            color: $bgWhite;
+        }
+    }
+    &.btn-outline-warning:hover {
+        color: $bgWhite;
+    }
+
+    &.btn-cta {
+        min-width: 186px;
+    }
+}

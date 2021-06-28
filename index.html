@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max Immo </title>
+    <link rel="stylesheet" href="assets/css/main.css">
+
+
+</head>
+
+<body>
+    <header id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-light py-0 my-0">
+            <div class="container content">
+                <a class="navbar-brand fw-bold brandLogo" href="#">
+                    <span class="mr-md-2"><img src="assets/img/logo/Exclude.svg" width="15px"></span> MaxImmo
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="catalogue.html">Catalogue</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contactez-moi</a>
+                        </li>
+                    </ul>
+                    <div class="text-center">
+                        <a href="" class="btn btn-outline-warning btn-cta" data-bs-toggle="modal"
+                            data-bs-target="#callClient">Se faire rappeler</a>
+                        <div class="modal fade" id="callClient" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Nous vous rappelons</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p class="w300">Laissez-nous simplement votre numéro ci-dessous.</p>
+                                        <form action="" id="formCallClient">
+                                            <div class="form-group">
+                                                <label for="phoneInput">Votre numéro de téléphone</label>
+                                                <input type="tel" class="form-control text-center"
+                                                    placeholder="01.02.03.04.05" id="phoneInput">
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Fermer</button>
+                                        <button type="button" class="btn btn-warning text-light"
+                                            id="btnSendCall">Envoyer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="headerSection">
+            <div class="container">
+                <div class="row rounded" id="headerMain">
+                    <div class="col-md-8 align-self-center blocLeft">
+                        <div>
+                            <h2 class="templateH1">Trouvez le bien <br><span class="text-light">qui vous
+                                    correspond</span></h2>
+                        </div>
+                        <div>
+                            <p>A vos côtés depuis 2012, je vous accompagne dans vos projets immobiliers.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-md-flex align-items-center d-none">
+                        <img src="assets/img/header/reviews-header.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <div class="row" id="formHeader">
+                    <div class="col">
+                        <form action="" class="d-flex flex-wrap flex-md-nowrap justify-content-md-between">
+                            <div class="form-group input-content">
+                                <span class="input-icon" onclick="focusInput('keyword')"><img
+                                        src="assets/img/icons/search.svg" width="20"></span>
+                                <input name="keyword" id="keyword" type="text" class="form-control grey"
+                                    placeholder="Rechercher par mots clés">
+                            </div>
+                            <div class="form-group input-content">
+                                <span class="input-icon"><img src="assets/img/icons/home.svg" width="20"></span>
+                                <span class="input-icon-suffix"><img src="assets/img/icons/caret.svg" width="20"></span>
+                                <select name="" id="selectType" class="form-control grey">
+                                    <option selected value="">Type de bien</option>
+                                    <option value="">Maison</option>
+                                    <option value="">Appartement</option>
+                                    <option value="">Terrain</option>
+                                </select>
+                            </div>
+                            <div class="form-group input-content">
+                                <span class="input-icon" onclick="focusInput('localisation')"><img
+                                        src="assets/img/icons/location.svg" width="20"></span>
+                                <input id="localisation" type="text" class="form-control grey localisation-items"
+                                    placeholder="Localisation recherchée">
+                                    <input type="hidden" name="localisation" id="localisationHidden" value="">
+                                    <div id="resultsLocalisation">
+                                    </div>
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Trouver un bien" class="btn btn-warning">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="partnersSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2 class="templateH2">
+                            <span class="horBarBlue"><img src="assets/img/partners/hor-blue-zone.svg" alt=""></span>
+                            <span class="title-partners">Nos partenaires</span>
+                        </h2>
+                        <p class="w400 s18 text-greyColor partnersSectionP">Nous sommes agréés avec les plus grandes
+                            agences immobilières de la région</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 blocLeft blocLeftPartner">
+                        <img src="assets/img/partners/Hero Pict Group.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 blocRight blocRightPartner">
+                        <p class="text-info fw-bold"><span class="pe-4">Ma story</span> <img
+                                src="assets/img/partners/story-line.svg" alt=""></p>
+                        <h2 class="templateH2">Le moyen le plus simple et le plus rapide pour trouver</h2>
+                        <p class="w400 s18 text-greyColor ">Créée en 2012, l’agence MaxImmo est maintenant reconnue dans
+                            toute la région Grande-Aquitaine et régions voisines.</p>
+                        <div class="d-flex quality flex-column flex-md-row">
+                            <div class="d-flex">
+                                <div class=" align-items-center">
+                                    <img src="assets/img/icons/fiabiity-icon.svg" alt="fiabilité">
+                                </div>
+                                <div>
+                                    <span class="title-quality fw-bold s16 ps-3">Fiabilité</span>
+                                    <p class="ps-3 text-greyColor">Un sens du service inégalé</p>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="align-items-center">
+                                    <img src="assets/img/icons/efficacity-icon.svg" alt="efficacité">
+                                </div>
+                                <div>
+                                    <span class="title-quality fw-bold s16 ps-3">Efficacité</span>
+                                    <p class="ps-3 text-greyColor">La qualité au Rendez-Vous</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="servicesSection">
+            <div class="container">
+                <div class="row pt-5 justify-content-center">
+                    <div class="col-md-3 text-center">
+                        <h2 class="fw-bold">Tous les services que nous proposons</h2>
+                    </div>
+                </div>
+                <div class="row py-5 mx-md-5">
+                    <div class="col px-md-4 mx-md-2 my-3 cardSolutions">
+                        <div class="card card-light border-0">
+                            <div class="p-3 align-self-center">
+                                <img src="assets/img/cards/acheter.svg" alt="">
+                            </div>
+                            <div class="title-card text-center px-4">
+                                <h3 class="s20 fw-bold">Acheter</h3>
+                                <p class="s16 text-greyColor">Trouvez le bien qui vous correspond, nous vous conseillons
+                                    et proposons des produits respectant vos demandes et conditions.</p>
+                            </div>
+                            <div class="cta align-self-center py-4">
+                                <a href="" class="btn btn-outline-warning btn-cta s16">Trouvez un bien</a>
+                            </div>
+                            <div class="addon addon-white"></div>
+                        </div>
+                    </div>
+                    <div class="col px-md-4 mx-md-2 my-3 cardSolutions">
+                        <div class="card card-light border-0 ">
+                            <div class="p-3 align-self-center">
+                                <img src="assets/img/cards/vendre.svg" alt="">
+                            </div>
+                            <div class="title-card text-center px-4">
+                                <h3 class="s20 fw-bold">Vendre</h3>
+                                <p class="s16 text-greyColor">Mettez en ligne votre appartement ou votre maison, nous
+                                    nous occupons de toruver les acheteurs potentiels et gérons les visites.</p>
+                            </div>
+                            <div class="cta align-self-center py-4">
+                                <a href="" class="btn btn-outline-warning btn-cta s16">Vendez rapidement</a>
+                            </div>
+                            <div class="addon addon-orange"></div>
+                        </div>
+                    </div>
+                    <div class="col px-md-4 mx-md-2 my-3 cardSolutions">
+                        <div class="card card-light border-0 ">
+                            <div class="p-3 align-self-center">
+                                <img src="assets/img/cards/louer.svg" alt="">
+                            </div>
+                            <div class="title-card text-center px-4">
+                                <h3 class="s20 fw-bold">Louer</h3>
+                                <p class="s16 text-greyColor">Mettez sur le marché de la location votre bien, nous avons
+                                    des centaines de ménages demandant des locations immobilières chaque mois.</p>
+                            </div>
+                            <div class="cta align-self-center py-4">
+                                <a href="" class="btn btn-outline-warning btn-cta s16">Recherchez</a>
+                            </div>
+                            <div class="addon addon-white"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="bannerSection" class="my-5">
+            <div class="container">
+                <div class="row mx-2 mx-md-0">
+                    <div class="col-md-6 blocLeft">
+                        <h2 class="s36 fw-bold">Estimez votre bien immobilier</h2>
+                        <p class="s18 w300">Commencez par entrer votre adresse email</p>
+                    </div>
+                    <div class="col-md-6 align-self-center align-items-center blocRight">
+                        <div class="input-group px-2">
+                            <input type="text" class="form-control" placeholder="Votre adresse éléctronique"
+                                aria-label="Votre adresse éléctronique" aria-describedby="button-addon2" id="estimEmail">
+                            <button class="btn btn-warning text-light btn-lg fw-bold" type="button"
+                                id="estimBtn">Estimation</button>
+                        </div>
+                    </div>
+                    <div class="col" >
+                        <form id="formEstimation" class="not-updated box">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda eos error sint quis! Vitae, incidunt voluptas. Rerum quisquam, a error obcaecati pariatur nesciunt quae velit officiis, vero iste voluptatibus necessitatibus sunt sit laborum debitis, iure rem! Aliquam, dolores ullam consequuntur optio non laudantium enim quo quis dolorem est adipisci debitis? Saepe cumque doloremque blanditiis deserunt.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="reviewsSection">
+            <div class="container">
+                <div class="row my-5 py-5 ">
+                    <div class="col-md-3 imgReviewsBlock">
+                        <div class="d-flex flex-wrap align-items-center h-100 py-5">
+                            <div class="secondaryImg  d-none d-md-block">
+                                <img src="assets/img/reviews/jane-doe.png" class="img-fluid op20 imgWait imgWaitActive"
+                                    id="secondaryImg" alt="jane doe">
+                                <img src="assets/img/reviews/jacky-doe.png" class="img-fluid op20 d-none imgWait"
+                                    alt="jacky doe">
+                                <img src="assets/img/reviews/john-doe.png" class="img-fluid op20 d-none imgWait"
+                                    alt="john doe">
+                            </div>
+                            <div class="arrows text-center pt-4">
+                                <img src="assets/img/reviews/Icons/arrow_left.svg" class="px-2 " alt="" id="prevImg"  onclick="changeImg('less')">
+                                <img src="assets/img/reviews/Icons/arrow_right.svg" class="px-2 " alt="" id="nextImg"
+                                    onclick="changeImg('more')">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-none d-md-block imgReviewsBlock">
+                        <div class="d-flex align-top customer">
+                            <img src="assets/img/reviews/john-doe.png" id="activeImg"
+                                class=" imgReviews imgReviewsActive scaleActiveImg" alt="john doe">
+                            <img src="assets/img/reviews/jane-doe.png" class="d-none imgReviews scaleActiveImg " alt="jane doe">
+                            <img src="assets/img/reviews/jacky-doe.png" class="d-none imgReviews scaleActiveImg " alt="jacky doe">
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3 slideRightBlock">
+                        <div class="">
+                            <p class="text-info fw-bold"><span class="pe-4">Avis clients</span>
+                                <img src="assets/img/partners/story-line.svg" alt=""></p>
+                        </div>
+                        <div class="text-start ">
+                            <h2 class="fw-bold s36">Ce que les clients pensent de moi</h2>
+                        </div>
+                        <div class="me-2 ">
+                            <div class="card p-4 card-review">
+                                <span class="quotes text-end"><img src="assets/img/reviews/quotes.svg" alt=""></span>
+                                <div>
+                                    <p class="fw-bold s20">" Le compromis parfait "</p>
+                                    <p class="text-greyColor">Maxime a su répondre à nos attentes, trouver le produit
+                                        qui nous convenait, et a parfaitement répondu à notre budget, c’est L’AGENT
+                                        immobilier du moment !</p>
+                                </div>
+                                <div class="d-flex justify-content-between mt-5">
+                                    <div class="reviewText">
+                                        <p class="fw-bold s18  mb-0">Adam Dupont</p>
+                                        <p class="text-greyColor s14">Acquéreur d’une maison de 110m² à Tarbes</p>
+                                    </div>
+                                    <div class="reviewStars">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star-empty.svg" alt="">
+                                        <img src="assets/img/reviews/Star-empty.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card p-4 card-review d-none">
+                                <span class="quotes text-end"><img src="assets/img/reviews/quotes.svg" alt=""></span>
+                                <div>
+                                    <p class="fw-bold s20">" Maxime est un vrai pro "</p>
+                                    <p class="text-greyColor">Il a su répondre à toutes mes demandes, même les plus exigentes, je recommande !</p>
+                                </div>
+                                <div class="d-flex justify-content-between mt-5">
+                                    <div class="reviewText">
+                                        <p class="fw-bold s18  mb-0">Jenny Dupont</p>
+                                        <p class="text-greyColor s14">Acquéreur d’un appartement de 48m² à Bordeaux</p>
+                                    </div>
+                                    <div class="reviewStars">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star-empty.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card p-4 card-review d-none">
+                                <span class="quotes text-end"><img src="assets/img/reviews/quotes.svg" alt=""></span>
+                                <div>
+                                    <p class="fw-bold s20">" Quel talent ! "</p>
+                                    <p class="text-greyColor">Un véritable acteur de la profession, il est tout simplement le meilleur agent immo rencontré à ce jour, on aurait envie de changer de maison plus souvent si on pouvait.</p>
+                                </div>
+                                <div class="d-flex justify-content-between mt-5">
+                                    <div class="reviewText">
+                                        <p class="fw-bold s18  mb-0">Celia Dupont</p>
+                                        <p class="text-greyColor s14">Acquéreur d’une maison de 72m² à Toulouse</p>
+                                    </div>
+                                    <div class="reviewStars">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                        <img src="assets/img/reviews/Star.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-md-3">
+                    <a class="navbar-brand fw-bold brandLogo" href="#">
+                        <span class="mr-md-2"><img src="assets/img/logo/Exclude.svg" width="20"></span> <span
+                            class="s27">MaxImmo</span>
+                    </a>
+                    <p class="py-3 s16 text-greyColor">Votre partenaire immobilier</p>
+                </div>
+                <div class="col-md-9">
+                    <div class="footerBlocks d-md-flex justify-content-md-end">
+                        <div class="text-start">
+                            <span class="fw-bold s24">Services</span>
+                            <ul>
+                                <li><a href="#">Acheter</a></li>
+                                <li><a href="#">Louer</a></li>
+                                <li><a href="#">Vendre</a></li>
+                                <li><a href="#">Estimer son bien</a></li>
+                            </ul>
+                        </div>
+                        <div class="text-start">
+                            <span class="fw-bold s24">A propos</span>
+                            <ul>
+                                <li><a href="#">Qui sommes-nous ?</a></li>
+                                <li><a href="#">Nos services</a></li>
+                                <li><a href="#">Cookies</a></li>
+                                <li><a href="#">CGU</a></li>
+                                <li><a href="#">Contactez-nous</a></li>
+                            </ul>
+                        </div>
+                        <div class="text-start">
+                            <span class="fw-bold s24">L'agence</span>
+                            <ul>
+                                <li>12 place de la Gironde<br><span class="fw-bold">33000 - BORDEAUX</span><br><span
+                                        class="fw-bold">FRANCE</span></li>
+                                <ul class="d-flex socialIcons">
+                                    <a href="#"><img src="assets/img/socials/Button/facebook-white.svg" id="facebook"
+                                            alt="Facebook icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                    <a href="#"><img src="assets/img/socials/Button/insta-white.svg" id="instagram"
+                                            alt="Instagram Icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                    <a href="#"><img src="assets/img/socials/Button/twitter-white.svg" id="twitter"
+                                            alt="Twitter Icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                    <a href="#"><img src="assets/img/socials/Button/youtube-white.svg" id="youtube"
+                                            alt="Youtube Icon" onmouseover="showIcons(this)"
+                                            onmouseout="hideIcons(this)"></a>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="bottomFooter">
+            <div class="row d-flex align-items-center">
+                <p class="text-center pt-3 s14">Copyright ©MaxImmo 2021. Toute reproduction partielle ou totale de ce
+                    site sera considérée comme illicite.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/scrollreveal.js"></script>
+    <script src="assets/js/bootstrap.bundle.js"></script>
+
+    
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/reveal.js"></script>
+    <script>
+        ScrollReveal().reveal('#partnersSection .blocLeft', slideLeft);
+        ScrollReveal().reveal('#partnersSection .blocRight', slideRight);
+
+        ScrollReveal().reveal('.imgReviewsBlock', slideLeft);
+        ScrollReveal().reveal('.slideRightBlock', slideRight);
+
+        ScrollReveal().reveal('.cardSolutions', fadeUp);
+
+        /* ZONE ESTIMATION */
+
+const estimBtn = document.querySelector("#estimBtn");
+
+estimBtn.onclick = () => {
+    let formEstimation = document.querySelector("#formEstimation");
+    let estimEmail = document.querySelector("#estimEmail").value;
+
+    if(estimEmail != ''){
+        formEstimation.classList.remove("not-updated")
+    }
+}
+
+/* ZONE ESTIMATION */
+    </script>
+</body>
+
+</html>

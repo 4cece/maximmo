@@ -1,0 +1,40 @@
+#mainNav {
+    font-size: 1rem;
+    font-weight: 600;
+
+    .content {
+        padding: 40px 1rem;
+        background: $bgWhite;
+    } 
+
+    ul {
+        @media screen and (min-width: 768px) {
+            margin: 0 1rem;
+        }
+
+
+        li {
+
+        img {
+            margin: auto;
+        }
+                
+            a {
+                    clear: both;
+                
+                
+                &.nav-link{
+                    text-align: center !important;
+                    line-height:0.5rem;
+                }
+                &.active {
+                    font-weight: bold;
+                }
+                &:hover {
+                    font-weight: bold;
+                }
+
+            }
+        }
+    }
+}
